@@ -1,0 +1,510 @@
+/* ==============================
+   RESET Y BASE
+============================== */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    /* Degradado desde blanco (abajo) a negro (arriba) */
+    background: linear-gradient(to top, #ffffff 0%, #414141 40%, #333333 80%, #000000 100%);
+    color: white;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ==============================
+   TIPOGRAFÍA
+============================== */
+h1 {
+    font-size: 3.5em;
+}
+
+h2 {
+    font-size: 2.7em;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+p,
+li {
+    font-size: 1.25em;
+}
+
+/* ==============================
+   BOTONES
+============================== */
+button {
+    font-size: 1.25em;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    background-color: #000;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #fff 0%, #aaa 100%);
+    color: #000;
+    border: 2px solid #fff;
+}
+
+/* ==============================
+   Botones con animación de degradado solo HERO y NUESTROS PROGRAMAS
+============================== */
+#hero button,
+#nuestros-programas .carta button {
+    transition: all 0.3s ease;
+}
+
+#hero button:hover,
+#nuestros-programas .carta button:hover {
+    background: linear-gradient(90deg, #fff, #000000, #fff);
+    background-size: 300% 300%;
+    color: #000000;
+    border: 2px solid #ffffff00;
+    animation: gradientShift 5s ease infinite;
+}
+
+/* ==============================
+   CONTENEDORES
+============================== */
+.container {
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* ==============================
+   ANIMACIONES
+============================== */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ==============================
+   CLIENTES
+============================== */
+/* Animación de aparición */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Texto animado (RYDEX) */
+.animated-text {
+    background: linear-gradient(90deg, #FFFFFF, #000000, #FFFFFF);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s ease infinite;
+    font-weight: bold;
+}
+
+.texto-blanco {
+    color: #FFFFFF;
+}
+
+/* ==============================
+   HEADER
+============================== */
+header {
+    background-color: #00000000;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    /* aseguramos que esté por encima de todo */
+}
+
+header .logo {
+    display: inline-block;
+    margin: 0;
+    padding: 25px 30px;
+    font-weight: bold;
+    color: #fff;
+    font-size: 1.6em;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s, background 0.3s;
+}
+
+/* Línea debajo en hover */
+header .logo::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s ease;
+}
+
+header .logo:hover::after {
+    width: 100%;
+}
+
+/* Degradado animado solo en hover */
+header .logo:hover {
+    background: linear-gradient(90deg, #FFFFFF, #000000, #FFFFFF);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s ease infinite;
+    cursor: pointer;
+}
+
+header .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+header a {
+    padding: 5px 12px;
+    font-weight: bold;
+    position: relative;
+    color: #fff;
+}
+
+header a::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    left: 0;
+    bottom: -2px;
+    transition: width 0.3s ease;
+}
+
+header a:hover::after {
+    width: 100%;
+}
+
+/* ==============================
+   HERO
+============================== */
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("media/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#hero h1 {
+    color: white;
+    font-size: 3.2em;
+}
+
+#hero button {
+    font-size: 1.75em;
+}
+
+/* ==============================
+   SOMOS PROYA
+============================== */
+#somos-proya {
+    background: transparent;
+}
+
+#somos-proya h2 {
+    color: white;
+}
+
+#somos-proya .container {
+    text-align: center;
+    padding: 200px 12px;
+}
+
+#somos-proya .texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ==============================
+   SECCIÓN NUESTROS PROGRAMAS
+============================== */
+#nuestros-programas {
+    background-color: rgb(36, 36, 36);
+    color: white;
+    text-align: center;
+    background: transparent
+}
+
+#nuestros-programas .container {
+    padding: 150px 12px;
+}
+
+#nuestros-programas h2 {
+    font-size: 3.2em;
+}
+
+#nuestros-programas h3 {
+    margin-top: 0px
+}
+
+#nuestros-programas p {
+    margin-top: 1.5cm;
+    display: none;
+    text-align: center;
+}
+
+#nuestros-programas .carta {
+    background-color: rgb(36, 36, 36);
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 15px;
+}
+
+.carta:first-child {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("media/sedan-crop.jpg");
+}
+
+.carta:nth-child(2) {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("media/suv-crop.jpg");
+}
+
+.carta:nth-child(3) {
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("media/sport-crop.jpg");
+}
+
+/* ==============================
+   TESTIMONIOS COMPLETO ADAPTATIVO
+============================== */
+#testimonios {
+    background: transparent;
+    text-align: center;
+    padding: 200px 20px, 100px;
+}
+
+#testimonios h2 {
+    font-size: 3.2em;
+    margin-bottom: 50px;
+    color: white;
+    margin-top: 7.5cm;
+}
+
+/* Contenedor en grid para escritorio */
+#testimonios .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* Tarjetas de testimonio */
+.testimonio-card {
+    background-color: rgb(36, 36, 36);
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: 20px;
+
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlide 1s forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Aparición secuencial */
+.testimonio-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.testimonio-card:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.testimonio-card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.testimonio-card:nth-child(4) {
+    animation-delay: 0.9s;
+}
+
+.testimonio-card:nth-child(5) {
+    animation-delay: 1.2s;
+}
+
+.testimonio-card:nth-child(6) {
+    animation-delay: 1.5s;
+}
+
+/* Efecto hover */
+.testimonio-card:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.7);
+}
+
+/* ==============================
+   FOOTER
+============================== */
+footer {
+    background: transparent;
+    padding: 20px 0;
+}
+
+footer .container {
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 100px;
+    justify-content: flex-end;
+}
+
+footer p {
+    color: #646464;
+    margin: 0;
+    padding: 12px;
+}
+
+/* Instagram icon */
+.instagram-link img {
+    width: 30px;
+    height: 30px;
+    transition: all 0.2s ease;
+}
+
+.instagram-link:hover img {
+
+    transform: scale(1.2);
+    /* aumenta un poco de tamaño */
+    cursor: pointer;
+}
+
+/* ==============================
+   MEDIA QUERIES / RESPONSIVE
+============================== */
+@media (min-width: 1080px) {
+
+    header {
+        width: 100%;
+        background-color: #00000045;
+    }
+
+    header .container {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 20px;
+     
+    }
+
+    header nav {
+        flex-direction: row;
+        gap: 10px;
+        padding: 0;
+    }
+
+    header a {
+        font-size: 1em;
+    }
+
+    #hero h1 {
+        font-size: 5em;
+    }
+
+    #somos-proya .container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    #somos-proya .texto {
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        text-align: center;
+    }
+
+    #somos-proya .img-container {
+        background-image: url("media/rydex.png");
+        background-size: auto;
+        background-position: center center;
+        height: 500px;
+        width: 500px;
+        border-radius: 50px;
+    
+    }
+
+    #nuestros-programas .programas {
+        display: flex;
+        justify-content: center;
+    }
+
+    #nuestros-programas p {
+        display: block;
+    }
+
+    #nuestros-programas h2 {
+        font-size: 4em;
+    }
+
+    #nuestros-programas .carta {
+        padding: 50px;
+        background-size: 100% 150px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: rgb(36, 36, 36);
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    footer .container {
+        justify-content: flex-end;
+    }
+}
