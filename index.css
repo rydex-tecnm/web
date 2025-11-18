@@ -79,7 +79,7 @@ button:hover {
 
 #hero button:hover,
 #nuestros-programas .carta button:hover {
-    background: linear-gradient(90deg, #fff, #000000, #fff);
+    background: linear-gradient(90deg, #fff, #525252, #fff);
     background-size: 300% 300%;
     color: #000000;
     border: 2px solid #ffffff00;
@@ -145,8 +145,8 @@ button:hover {
    HEADER
 ============================== */
 header {
-    background-color: #00000000;
-    position: fixed;
+    background-color: transparent;
+    position: static;
     width: 100%;
     top: 0;
     left: 0;
@@ -184,7 +184,7 @@ header .logo:hover::after {
 
 /* Degradado animado solo en hover */
 header .logo:hover {
-    background: linear-gradient(90deg, #FFFFFF, #000000, #FFFFFF);
+    background: linear-gradient(90deg, #FFFFFF, #6b6b6b, #FFFFFF);
     background-size: 300% 300%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -406,12 +406,12 @@ footer .container {
     align-items: center;
     padding: 0 20px;
     height: 100px;
-    justify-content: flex-end;
+    justify-content: center;
 }
 
 footer p {
     color: #646464;
-    margin: 0;
+    margin-right: 10px;
     padding: 12px;
 }
 
@@ -435,15 +435,15 @@ footer p {
 @media (min-width: 1080px) {
 
     header {
+        position: fixed;
         width: 100%;
-        background-color: #00000045;
     }
 
     header .container {
         flex-direction: row;
         justify-content: space-between;
         padding: 10px 20px;
-     
+
     }
 
     header nav {
@@ -480,7 +480,7 @@ footer p {
         height: 500px;
         width: 500px;
         border-radius: 50px;
-    
+
     }
 
     #nuestros-programas .programas {
@@ -504,7 +504,8 @@ footer p {
         background-color: rgb(36, 36, 36);
         box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
     }
+
     footer .container {
-        justify-content: flex-end;
+        justify-content: center;
     }
 }
